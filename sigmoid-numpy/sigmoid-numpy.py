@@ -1,9 +1,8 @@
 import numpy as np
 
-def sigmoid(x):
+def sigmoid(z):
     """
     Vectorized sigmoid function.
     """
-    # Write code here
-    x = np.array(x)
-    return 1 / ( 1 + np.exp(-x))
+    z=np.array(z)
+    return np.where(z >= 0, 1/(1+np.exp(-z)), np.exp(z)/(1+np.exp(z)))
